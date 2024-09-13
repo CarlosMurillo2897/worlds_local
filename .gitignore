@@ -1,0 +1,4 @@
+# Only update db & fwl files.
+*.old
+*_backup_*.db
+*_backup_*.fwl
