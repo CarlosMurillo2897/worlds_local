@@ -2,3 +2,6 @@
 *.old
 *_backup_*.db
 *_backup_*.fwl
+Locochon_forestMaskTexCache
+Locochon_heightTexCache
+Locochon_mapTexCache
