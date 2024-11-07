@@ -2,6 +2,6 @@
 *.old
 *_backup_*.db
 *_backup_*.fwl
-Locochon_forestMaskTexCache
-Locochon_heightTexCache
-Locochon_mapTexCache
+[a-zA-Z]*_forestMaskTexCache
+[a-zA-Z]*_heightTexCache
+[a-zA-Z]*_mapTexCache
