@@ -37,7 +37,7 @@ GOTO waitForProcess
         GOTO waitForProcess
     )
     CALL :createCommit
-    GOTO :EOF
+    EXIT
 
 :createCommit
     SET updates=
