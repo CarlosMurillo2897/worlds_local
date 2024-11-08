@@ -1,4 +1,4 @@
-@ECHO OFF
+ECHO OFF
 CLS
 
 @ECHO 0. Define variables.
@@ -26,6 +26,7 @@ GOTO waitForProcess
     if %ERRORLEVEL% == 0 (
         TIMEOUT /t %timeout% /nobreak >nul
 
+        :: i.e.: Check every 20 seconds if process still alive, and commit every 20 minutes (1200secs), 20seconds * 60limit = 1200secs.
         if %counter% EQU %limit% (
             CALL :defineDateTime
             CALL :createCommit
@@ -40,10 +41,14 @@ GOTO waitForProcess
 
 :createCommit
     ECHO Commiting at %Date_Time%.
-    REM TODO: ONLY IF THERE'S SMTH AT GIT STATUS.
-    GIT add .
-    GIT commit -m "Auto-Commit at %Date_Time%"
-    GIT push
+    SET updates=
+    FOR /f %%i in ('git status --short') DO SET updates=%%i
+
+    if NOT [%updates%] == [] (
+        GIT add .
+        GIT commit -m "Auto-Commit at %Date_Time%"
+        GIT push
+    )
 
 :defineDateTime
     SET Date_Time=%Date:~5%-%Time:~0,8%
