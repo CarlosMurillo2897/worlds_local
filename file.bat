@@ -44,6 +44,7 @@ GOTO waitForProcess
     FOR /f %%i in ('git status --short') DO SET updates=%%i
 
     if NOT [%updates%] == [] (
+        ECHO.
         ECHO Commiting at %Date_Time%.
         GIT add .
         GIT commit -m "Auto-Commit at %Date_Time%"
