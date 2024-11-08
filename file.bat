@@ -3,8 +3,8 @@ CLS
 
 @ECHO 0. Define variables.
 SET counter=0
-SET /a timeout=20
-SET /a limit=60
+SET /a timeout=10
+SET /a limit=120
 SET Process_ID=892970
 SET Steam_PATH="C:\Program Files (x86)\Steam\Steam.exe"
 SET Process_Name="valheim.exe"
@@ -26,7 +26,7 @@ GOTO waitForProcess
     if %ERRORLEVEL% == 0 (
         TIMEOUT /t %timeout% /nobreak >nul
 
-        :: i.e.: Check every 20 seconds if process still alive, and commit every 20 minutes (1200secs), 20seconds * 60limit = 1200secs.
+        :: i.e.: Check every 10 seconds if process still alive, and commit every 20 minutes (1200secs), 10seconds * 120limit = 1200secs.
         if %counter% EQU %limit% (
             CALL :defineDateTime
             CALL :createCommit
