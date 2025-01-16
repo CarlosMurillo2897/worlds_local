@@ -35,6 +35,6 @@ Since we wanted to have a personal server only for us I thought: maybe at the be
 
 I felt pretty geek by doing this, but I think it's nice that we can use Development tools we normally use at work to do some random things.
 
-It's a really a small but powerful solution that doesn't require a lot of knowledge to understand what's about.
+It's a really small but powerful solution that doesn't require a lot of knowledge to understand what's about.
 
 I love to automatize stuff and even by doing something that it's common for us as Developers I learned something new ([Git LFS](https://git-lfs.com/)) while doing it.
